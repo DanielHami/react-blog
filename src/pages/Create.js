@@ -60,7 +60,7 @@ export default function Create() {
                     required>
                   </input>
                 <button type="submit" 
-                        className="border-2 mt-6 p-2 w-24 mx-auto rounded-lg bg-pink-500 ">{success ? "Added" : "Submit"}</button>
+                        className="border-2 mt-6 p-2 w-24 mx-auto rounded-lg bg-pink-500 text-white ">{success ? "Added" : "Submit"}</button>
             </form>
          </div>
       }

@@ -10,6 +10,7 @@ export default function CategoryBlog() {
   
 
   useEffect(() => {
+    setSeeAll(true)
     fetch('http://localhost:8000/blogs')
       .then(res => {
         return res.json()
@@ -19,8 +20,10 @@ export default function CategoryBlog() {
       })
   }, [])
 
+
+
   return (
-    <div className="grid grid-cols-4 max-w-7xl my-20 mx-auto">
+    <div className="grid grid-cols-1 md:grid grid-cols-4 max-w-7xl my-20 mx-auto">
       <div className="col-span-1 px-2 py-6">
         <p className="text-3xl mb-8">Category</p>
         <div className="flex flex-wrap gap-4">

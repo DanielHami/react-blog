@@ -48,7 +48,7 @@ function Login() {
             required>
           </input>
           <button type="submit"
-                  className="border-2 w-full mx-auto" onClick={handleLogin}>Sign in</button>
+                  className="border-2 w-full mx-auto " onClick={handleLogin}>Sign in</button>
           <button className="border-2 flex gap-4 font-semibold py-2 items-center justify-center rounded-lg " onClick={signInWithFacebook}>{<SiFacebook className="text-3xl text-blue-600"/>}Sign in with Facebook</button>
         </form>
       }
