@@ -20,3 +20,16 @@ code {
 .different {
   font-size: 2rem;
 }
+
+/*create page FORM */
+
+@layer base {
+  label {
+    @apply font-semibold
+  }
+
+  input {
+    @apply rounded-lg p-2
+
+  }
+}

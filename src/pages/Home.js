@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import Bloglist from "../BlogsLists";
+import Bloglist from "../components/BlogsList"
+
 
 
 

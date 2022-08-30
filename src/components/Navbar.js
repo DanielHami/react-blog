@@ -1,6 +1,6 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { ResponsiveNavbar } from "./components/style/Styled.bloglist";
+import { ResponsiveNavbar } from "./style/Styled.bloglist";
 import { useState } from "react";
 
 
@@ -20,9 +20,9 @@ const Navbar = () => {
                <div className="nav-menu">
                   <ul className="">
                      <CustomLink to="/">Home</CustomLink>
-                     <CustomLink to="/about">About</CustomLink>
+                     <CustomLink to="/category">Category</CustomLink>
                      <CustomLink to="/pricing">Pricing</CustomLink>
-                     <CustomLink to="/contact">Contact</CustomLink>
+                     <CustomLink to="/create">New Blog</CustomLink>
                   </ul>
                </div>
                <div className="flex content-center">

@@ -1,9 +1,7 @@
 
-import { StyledBotton, StyledGrid, StyledImg } from "./components/style/Styled.bloglist";
+import { StyledBotton, StyledGrid, StyledImg } from "../components/style/Styled.bloglist";
 
 const Bloglist = ({blogs, type, mode }) => {
-
- 
 
     return (  
       <StyledGrid prop={mode}>
