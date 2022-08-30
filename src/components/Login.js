@@ -23,7 +23,7 @@ function Login() {
   }
 
   async function signInWithFacebook() {
-    const { user, session, error } = await supabase.auth.signIn({
+    const {error} = await supabase.auth.signIn({
       provider: 'facebook',
     })
   }
