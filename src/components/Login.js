@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { supabase } from '../supabaseClient'
+import {SiFacebook} from 'react-icons/si'
 
 
 function Login() {
@@ -28,15 +29,16 @@ function Login() {
   }
 
   return (
-    <div className="text-center">
-      <div>
-        <p className="text-2xl">Login</p>
+    <div className="text-center mx-2 my-12">
+      <div className="space-y-4">
+        <p className="text-3xl font-semibold">Log In</p>
         <p>If you want to create a new blog first must be login </p>
       </div>
+
       {loading ? (
         'Sending magic link...'
       ) :
-        <form onSubmit={handleLogin}
+        <form
           className="flex flex-col mx-auto mt-8 gap-4 max-w-lg">
           <input type="email"
             value={email}
@@ -46,11 +48,10 @@ function Login() {
             required>
           </input>
           <button type="submit"
-            className="border-2 w-24 mx-auto"
-          >Enter</button>
+                  className="border-2 w-full mx-auto" onClick={handleLogin}>Sign in</button>
+          <button className="border-2 flex gap-4 font-semibold py-2 items-center justify-center rounded-lg " onClick={signInWithFacebook}>{<SiFacebook className="text-3xl text-blue-600"/>}Sign in with Facebook</button>
         </form>
       }
-       <button className="border-2" onClick={signInWithFacebook}>Login with Facebook</button>
     </div>
   )
 }
