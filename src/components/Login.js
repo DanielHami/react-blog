@@ -60,7 +60,7 @@ function Login() {
           <div className="flex flex-col mt-5 gap-4 max-w-sm mx-auto">
             <p className="text-lg font-bold">or</p>
             <button className="border-2 flex gap-4 font-semibold py-2 items-center justify-center rounded-lg " onClick={signInWithFacebook}>{<SiFacebook className="text-3xl text-blue-600" />}Sign in with Facebook</button>
-            <button className="border-2 flex gap-4 font-semibold py-2 items-center justify-center rounded-lg " onClick={signInWithFacebook}>{<BsGithub className="text-3xl text-gray-900" />}Sign in with GitHub</button>
+            <button className="border-2 flex gap-4 font-semibold py-2 items-center justify-center rounded-lg " onClick={signInWithGithub}>{<BsGithub className="text-3xl text-gray-900" />}Sign in with GitHub</button>
           </div>
         </div>
       }
