@@ -6,6 +6,7 @@ import Pricing from "./pages/Pricing";
 import { Route, Routes} from "react-router-dom";
 import Footer from './components/Footer';
 import Login from "./components/Login";
+import PrivacyPolicy from "./pages/PrivacyPolicy"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
            <Route path="/pricing" element={<Pricing/>}></Route>
            <Route path="/create" element={<Create/>}></Route>
            <Route path="/login" element={<Login/>}></Route>
+           <Route path="/privacy-policy" element={<PrivacyPolicy/>}></Route>
           </Routes>
         </div>
         <Footer/>
