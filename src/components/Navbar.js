@@ -25,8 +25,13 @@ const Navbar = () => {
                      <CustomLink to="/create">New Blog</CustomLink>
                   </ul>
                </div>
-               <div className="flex content-center">
-                  <button onClick={() => handleButton()}>{active ? <FaTimes size={25} /> : <FaBars size={25}/>}</button>
+                <div className="nav-menu">
+                  <ul className="items-center">
+                     <CustomLink to='/login' className="px-4 py-2  bg-blue-600 rounded-md text-white ">Sign in</CustomLink>
+                  </ul>
+               </div>
+               <div className="flex md:hidden content-center">
+                  <button onClick={() => handleButton()}>{active ? <FaTimes size={25} /> : <FaBars size={25} />}</button>
                </div>
             </div>
          </ResponsiveNavbar>}

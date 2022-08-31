@@ -21,7 +21,7 @@ p {
 export const ResponsiveNavbar = styled.div `
  ${props => props.prop ? tw`w-full h-96 mx-auto block flex justify-center` : tw`flex flex-col block gap-4 `}
  .nav-items {
-  ${props => props.prop ? tw`my-auto` : tw`flex justify-between`}/
+  ${props => props.prop ? tw`my-auto` : tw`flex justify-between`}
  } 
  .nav-menu {
     ${props => props.prop ? tw`flex justify-center` : tw`my-auto hidden sm:block`}

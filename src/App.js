@@ -5,6 +5,7 @@ import Create from "./pages/Create";
 import Pricing from "./pages/Pricing";
 import { Route, Routes} from "react-router-dom";
 import Footer from './components/Footer';
+import Login from "./components/Login";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
            <Route path="/category" element={<CategoryBlog/>}></Route>
            <Route path="/pricing" element={<Pricing/>}></Route>
            <Route path="/create" element={<Create/>}></Route>
+           <Route path="/login" element={<Login/>}></Route>
           </Routes>
         </div>
         <Footer/>
