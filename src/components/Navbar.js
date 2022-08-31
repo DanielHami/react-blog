@@ -27,7 +27,7 @@ const Navbar = () => {
          {<ResponsiveNavbar prop={active}>
             <div className="nav-items">
                <div>
-                  <img src="/images/logo2.jpg" width={50} height={50} alt="logo" />
+                  <a href="/#"><img src="/images/logo2.jpg" width={50} height={50} alt="logo" /></a>
                </div>
                <div className="nav-menu">
                   <ul className="">
