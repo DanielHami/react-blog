@@ -10,7 +10,7 @@ ${props => props.prop ==="first" ? tw`w-2/5 sm:h-56 sm:w-1/2 lg:w-52 md:h-auto m
 ${props => props.prop ==="second" ? tw`w-full max-h-96 sm:h-56`  : "" };
 `   
 export const StyledGrid = styled.div`
-${props => props.prop==="second"? tw`grid gap-10 md:grid md:grid-cols-2 md:gap-6 lg:grid lg:grid-cols-4 mx-3 lg:gap-6`: tw``}
+${props => props.prop==="second"? tw`grid gap-10  md:grid-cols-2 md:gap-6 lg:grid-cols-4 mx-3 lg:gap-6`: tw``}
 h1 {
     ${props => props.prop ==="second" ? tw`text-gray-700 font-bold` : tw ``}
 }

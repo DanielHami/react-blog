@@ -33,7 +33,7 @@ const Home = () => {
       </div>
       <div className="my-20 lg:my-24 flex justify-center">
         <div className="max-w-7xl">
-          <p className="text-2xl mx-2 mb-12">Breaking news</p>
+          <p className="text-4xl mx-2 mb-12">Breaking news</p>
           {blogs && <Bloglist blogs={blogs} type="bottom" mode="second" />}
         </div>
       </div>
