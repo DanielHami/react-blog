@@ -19,12 +19,15 @@ p {
 }
 `
 export const ResponsiveNavbar = styled.div `
- ${props => props.prop ? tw`w-full h-96 mx-auto block flex justify-center` : tw`flex flex-col block gap-4 `}
+ ${props => props.prop ? tw`w-full h-[600px] mx-auto block flex bg-black text-white justify-center` : tw`flex flex-col block gap-4 `}
  .nav-items {
-  ${props => props.prop ? tw`my-auto` : tw`flex justify-between`}
+  ${props => props.prop ? tw`my-auto ` : tw`flex justify-between`}
  } 
  .nav-menu {
-    ${props => props.prop ? tw`flex justify-center` : tw`my-auto hidden sm:block`}
+    ${props => props.prop ? tw`flex justify-center my-10` : tw`my-auto hidden sm:block`}
+  }
+  .nav-menu2 {
+    ${props => props.prop ? tw` mt-12` : tw`my-auto hidden sm:block`}
   }
  ul {
     ${props => props.prop ? tw`flex flex-col gap-8 text-center text-3xl` : tw`flex gap-12 text-xl`}
@@ -33,8 +36,8 @@ export const ResponsiveNavbar = styled.div `
     ${props => props.prop ? tw`hidden` : tw`block`}
   }
 
-  button {
-    ${props => props.prop ? tw`absolute top-3 right-2` : tw`sm:hidden`}
+  .button-style {
+    ${props => props.prop ? tw`absolute top-10 text-xl right-8` : tw`sm:hidden`}
   }
   .hidden-menu {
     ${props => props.prop ? tw`block` : tw`hidden`}

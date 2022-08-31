@@ -1,7 +1,8 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import Login from "../components/Login"
-import { supabase } from '../supabaseClient'
+import { supabase } from "../supabaseClient"
+
 
 export default function Create() {
     const [title, setTitle] = useState("")
@@ -9,16 +10,16 @@ export default function Create() {
     const [author, setAuthor] = useState("")
     const [success, setSuccess] = useState(false)
     const [session, setSession] = useState(null)
+  
+    useEffect(() => {
+        setSession(supabase.auth.session())
+    
+        supabase.auth.onAuthStateChange((_event, session) => {
+          setSession(session)
+        })
+      }, [])
 
    
-    useEffect(() => {
-      setSession(supabase.auth.session())
-  
-      supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session)
-      })
-    }, [])
-
     const handleSubmit = (e) => {
       e.preventDefault()
       axios.post('http://localhost:8000/blogs',{
@@ -35,8 +36,8 @@ export default function Create() {
 
     return (
       <div>
-      {!session  ? <Login/> :
-        <div className="mx-auto my-10">
+      {!session ? <Login/> :
+        <div className="mx-auto my-10 md:my-32">
             <form onSubmit={handleSubmit} className="flex flex-col max-w-lg mx-auto p-5 gap-3 ">
                 <label className="">Blog title:</label>
                   <input type="text"

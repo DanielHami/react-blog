@@ -1,10 +1,22 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ResponsiveNavbar } from "./style/Styled.bloglist";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import signout from "./signout/SignOut";
+import { supabase } from "../supabaseClient";
+
 
 
 const Navbar = () => {
+   const [session, setSession] = useState(null)
+
+   useEffect(() => {
+      setSession(supabase.auth.session())
+  
+      supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session)
+      })
+    }, []) 
 
    const [active, setActive] = useState(false)
    const handleButton = () => {
@@ -25,13 +37,15 @@ const Navbar = () => {
                      <CustomLink to="/create">New Blog</CustomLink>
                   </ul>
                </div>
-                <div className="nav-menu">
+                <div className="nav-menu2">
                   <ul className="items-center">
-                     <CustomLink to='/login' className="px-4 py-2  bg-blue-600 rounded-md text-white ">Sign in</CustomLink>
+                     {!session ? <CustomLink to='/login' className="px-4 py-2 text-lg bg-blue-600 rounded-md text-white ">Sign in</CustomLink> : 
+                     <button onClick={signout} className="px-4 py-2 text-lg bg-red-600 rounded-md text-white ">Sign out</button>
+                     }
                   </ul>
                </div>
                <div className="flex md:hidden content-center">
-                  <button onClick={() => handleButton()}>{active ? <FaTimes size={25} /> : <FaBars size={25} />}</button>
+                  <button className="button-style" onClick={() => handleButton()}>{active ? <FaTimes size={25} /> : <FaBars size={25} />}</button>
                </div>
             </div>
          </ResponsiveNavbar>}

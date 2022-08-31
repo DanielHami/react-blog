@@ -1,6 +1,6 @@
 import Bloglist from "../components/BlogsList";
 import { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
+
 
 
 export default function CategoryBlog() {
@@ -23,10 +23,10 @@ export default function CategoryBlog() {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid grid-cols-4 max-w-7xl my-20 mx-auto">
+    <div className=" space-y-20 max-w-7xl my-20 mx-auto md:my-32">
       <div className="col-span-1 px-2 py-6">
-        <p className="text-5xl mb-12 font-semibold ">Category</p>
-        <div className="flex flex-wrap gap-4 text-lg">
+        <p className="text-6xl mb-14 font-semibold ">Category</p>
+        <div className="flex flex-wrap gap-6 md:gap-12 text-xl">
             <button className="text-left" onClick={() => setSeeAll(true)}>All Blogs</button>
             <button onClick={() => {setCategory("trade"); setSeeAll(false)}}>Trade</button>
             <button onClick={() => {setCategory("sport");setSeeAll(false)}}>Sport</button>

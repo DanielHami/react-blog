@@ -24,18 +24,18 @@ function Login() {
   }
 
   async function signInWithFacebook() {
-    const { error } = await supabase.auth.signIn({
+     await supabase.auth.signIn({
       provider: 'facebook',
     })
   }
 
   async function signInWithGithub() {
-    const { user, session, error } = await supabase.auth.signIn({
+    await supabase.auth.signIn({
       provider: 'github',
     })
   }
   return (
-    <div className="text-center mx-2 my-12">
+    <div className="text-center mx-2 my-12 md:my-32">
 
       {loading ? (
         'Sending magic link...'
