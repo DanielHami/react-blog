@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Bloglist from "../components/BlogsList"
+import { supabase } from "../supabaseClient";
 
 
 
@@ -10,14 +11,16 @@ const Home = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:8000/blogs')
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        setBlogs(data)
-      })
+    async function fetchData() {
+      let { data } = await supabase
+        .from('blogs')
+        .select('*')
+      setBlogs(data)
+    }
+    fetchData()
   }, [])
+
+
   return (
     <div>
       <div className="bg-slate-900 flex justify-center">
@@ -25,7 +28,7 @@ const Home = () => {
           <div className=" py-4 text-white mb-5 lg:py-12 lg:mb-12">
             <p className="text-6xl font-extrabold text-center uppercase my-10 lg:text-9xl lg:pb-12">The blog</p>
             <div className="flex flex-col py-10 px-3 gap-12 md:grid md:grid-cols-2 md:gap-12 ">
-              {blogs && <Bloglist blogs={blogs.filter(blog => blog.author === 'Hami')} type="bottom" />}
+              {blogs && <Bloglist blogs={blogs.filter(blog => blog.author === 'one')} type="bottom" />}
               {blogs && <Bloglist blogs={blogs.slice(0, 3)} mode="first" />}
             </div>
           </div>
